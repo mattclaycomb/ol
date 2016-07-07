@@ -1,0 +1,27 @@
+<span class="label">ID:</span>
+{{business.id}}<br>
+
+<span class="label">UUID:</span>
+{{business.uuid}}<br>
+
+<span class="label">Created:</span>
+{{business.createdAt}}<br>
+
+<span class="label">Name:</span>
+{{business.name}}<br>
+
+<span class="label">Address:</span>
+{{business.address}}
+{{business.address2}}
+{{business.city}},
+{{business.state}}
+{{business.zip}}<br>
+
+<span class="label">Country:</span>
+{{business.country}}<br>
+
+<span class="label">Phone:</span>
+{{format-phone business.phone}}<br>
+
+<span class="label">Website:</span>
+<a href={{business.website}}>{{business.website}}</a>
