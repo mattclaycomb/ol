@@ -16,8 +16,8 @@ test('it disables the first and previous links', function(assert) {
   assert.ok($('.nav-prev').hasClass('disabled'));
   assert.notOk($('.nav-next').hasClass('disabled'));
   assert.notOk($('.nav-last').hasClass('disabled'));
-  assert.equal($('.nav-next')[0].href, this.get('pages.next'));
-  assert.equal($('.nav-last')[0].href, this.get('pages.last'));
+  assert.equal($('.nav-next')[0].getAttribute('href'), '/value1');
+  assert.equal($('.nav-last')[0].getAttribute('href'), '/value2');
 });
 
 test('it disables the next and last links', function(assert) {
@@ -31,6 +31,6 @@ test('it disables the next and last links', function(assert) {
   assert.notOk($('.nav-prev').hasClass('disabled'));
   assert.ok($('.nav-next').hasClass('disabled'));
   assert.ok($('.nav-last').hasClass('disabled'));
-  assert.equal($('.nav-first')[0].href, this.get('pages.first'));
-  assert.equal($('.nav-prev')[0].href, this.get('pages.prev'));
+  assert.equal($('.nav-first')[0].getAttribute('href'), '/value1');
+  assert.equal($('.nav-prev')[0].getAttribute('href'), '/value2');
 });

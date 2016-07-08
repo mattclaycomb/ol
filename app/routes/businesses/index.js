@@ -14,13 +14,5 @@ export default Ember.Route.extend({
 
     setupController(controller, model) {
         controller.set('businesses', model);
-    },
-
-    actions: {
-        error(error) {
-            if (error) {
-                this.transitionTo('error');
-            }
-        }
     }
 });
