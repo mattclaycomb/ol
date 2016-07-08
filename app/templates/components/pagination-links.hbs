@@ -1,6 +1,14 @@
 <div class="btn-group">
-  <a class="btn btn-default nav-first {{if firstDisabled 'disabled'}}" href={{make-rel pages.first}}>First</a>
-  <a class="btn btn-default nav-prev {{if prevDisabled 'disabled'}}" href={{make-rel pages.prev}}>Previous</a>
-  <a class="btn btn-default nav-next {{if nextDisabled 'disabled'}}" href={{make-rel pages.next}}>Next</a>
-  <a class="btn btn-default nav-last {{if lastDisabled 'disabled'}}" href={{make-rel pages.last}}>Last</a>
+  {{link-to 'First' 'businesses'
+    (query-params page=pages.first.page per_page=pages.first.per_page)
+    class=(concat "btn btn-default nav-first" (if firstDisabled ' disabled'))}}
+  {{link-to 'Previous' 'businesses'
+    (query-params page=pages.prev.page per_page=pages.prev.per_page)
+    class=(concat "btn btn-default nav-prev" (if prevDisabled ' disabled'))}}
+  {{link-to 'Next' 'businesses'
+    (query-params page=pages.next.page per_page=pages.next.per_page)
+    class=(concat "btn btn-default nav-next" (if nextDisabled ' disabled'))}}
+  {{link-to 'Last' 'businesses'
+    (query-params page=pages.last.page per_page=pages.last.per_page)
+    class=(concat "btn btn-default nav-last" (if lastDisabled ' disabled'))}}
 </div>

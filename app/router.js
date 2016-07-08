@@ -9,6 +9,7 @@ Router.map(function() {
   this.route('businesses', function() {
     this.route('detail', { path: '/:business_id' });
   });
+  // the error route isn't intended to be visited directly
   this.route('error');
 });
 

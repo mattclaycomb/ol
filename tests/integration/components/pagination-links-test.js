@@ -5,6 +5,8 @@ moduleForComponent('pagination-links', 'Integration | Component | pagination lin
   integration: true
 });
 
+// Unfortunately, the routing service has url generation disabled in integration tests
+// so we can't test the urls are correct
 test('it disables the first and previous links', function(assert) {
   this.set('pages', {
       next: 'http://example.com/value1',
@@ -16,8 +18,6 @@ test('it disables the first and previous links', function(assert) {
   assert.ok($('.nav-prev').hasClass('disabled'));
   assert.notOk($('.nav-next').hasClass('disabled'));
   assert.notOk($('.nav-last').hasClass('disabled'));
-  assert.equal($('.nav-next')[0].getAttribute('href'), '/value1');
-  assert.equal($('.nav-last')[0].getAttribute('href'), '/value2');
 });
 
 test('it disables the next and last links', function(assert) {
@@ -31,6 +31,4 @@ test('it disables the next and last links', function(assert) {
   assert.notOk($('.nav-prev').hasClass('disabled'));
   assert.ok($('.nav-next').hasClass('disabled'));
   assert.ok($('.nav-last').hasClass('disabled'));
-  assert.equal($('.nav-first')[0].getAttribute('href'), '/value1');
-  assert.equal($('.nav-prev')[0].getAttribute('href'), '/value2');
 });

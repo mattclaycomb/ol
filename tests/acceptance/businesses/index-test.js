@@ -22,7 +22,8 @@ test('visiting /businesses', function(assert) {
 });
 
 test('can load second page', function(assert) {
-  visit('/businesses?page=2');
+  visit('/businesses');
+  click('.nav-next');
 
   andThen(function() {
     assert.equal(currentURL(), '/businesses?page=2');
